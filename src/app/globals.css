@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply m-2;
+}
+
+div,
+input {
+  @apply m-1;
+}
+
+h1 {
+  @apply m-1 font-bold;
+}
+
+button {
+  @apply m-1 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded;
+}
+
+input {
+  @apply shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight;
+}
+
+/* https://github.com/tailwindlabs/tailwindcss/discussions/5969 */
+.button-submit {
+  @apply bg-blue-500;
+}
