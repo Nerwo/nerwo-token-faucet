@@ -1,13 +1,13 @@
-'use client'
+'use client';
 
-import { BaseError } from 'viem'
-import { useAccount, useConnect, useDisconnect } from 'wagmi'
+import { BaseError } from 'viem';
+import { useAccount, useConnect, useDisconnect } from 'wagmi';
 
 export function Connect() {
-  const { connector, isConnected } = useAccount()
+  const { connector, isConnected } = useAccount();
   const { connect, connectors, error, isLoading, pendingConnector } =
-    useConnect()
-  const { disconnect } = useDisconnect()
+    useConnect();
+  const { disconnect } = useDisconnect();
 
   return (
     <div>
@@ -30,5 +30,5 @@ export function Connect() {
 
       {error && <div>{(error as BaseError).shortMessage}</div>}
     </div>
-  )
+  );
 }
