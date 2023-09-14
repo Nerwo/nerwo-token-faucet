@@ -1,12 +1,14 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useWizard } from 'react-use-wizard';
 import { BaseError, parseUnits } from 'viem';
 import {
   useContractWrite,
   usePrepareContractWrite,
   useWaitForTransaction,
 } from 'wagmi';
+
 
 import { nerwoTokenConfig } from './contracts';
 import { useDebounce } from '../hooks/useDebounce';
@@ -15,6 +17,7 @@ import { stringify } from '../utils/stringify';
 export function MintToken() {
   const [amount, setTokenId] = useState('');
   const debouncedAmount = useDebounce(amount);
+  const { nextStep } = useWizard();
 
   const { config } = usePrepareContractWrite({
     ...nerwoTokenConfig,
@@ -29,6 +32,12 @@ export function MintToken() {
     isSuccess,
   } = useWaitForTransaction({ hash: data?.hash });
 
+  useEffect(() => {
+    if (isSuccess) {
+      nextStep();
+    }
+  }, [isSuccess, nextStep]);
+
   return (
     <>
       <h3>Mint a Nerwo Test Token</h3>
@@ -38,8 +47,7 @@ export function MintToken() {
       }}>
         <input
           placeholder="Amount"
-          onChange={(e) => setTokenId(e.target.value)}
-        />
+          onChange={(e) => setTokenId(e.target.value)} />
         <button className='button-submit' disabled={!write} type="submit">
           Mint
         </button>

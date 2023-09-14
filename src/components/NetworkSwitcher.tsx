@@ -1,19 +1,22 @@
 'use client';
 
-import { useNetwork, useSwitchNetwork } from 'wagmi';
+import { useEffect } from 'react';
+import { useWizard } from 'react-use-wizard';
+import { sepolia, useNetwork, useSwitchNetwork } from 'wagmi';
 
 export function NetworkSwitcher() {
   const { chain } = useNetwork();
-  const { chains, error, isLoading, pendingChainId, switchNetwork } =
-    useSwitchNetwork();
+  const { chains, error, isLoading, pendingChainId, switchNetwork } = useSwitchNetwork();
+  const { nextStep } = useWizard();
+
+  useEffect(() => {
+    if (chain?.id === sepolia.id) {
+      nextStep();
+    }
+  }, [chain, nextStep]);
 
   return (
     <div>
-      <div>
-        Connected to {chain?.name ?? chain?.id}
-        {chain?.unsupported && ' (unsupported)'}
-      </div>
-      <br />
       {switchNetwork && (
         <div>
           Switch to:{' '}
