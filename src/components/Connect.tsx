@@ -1,32 +1,31 @@
 'use client';
 
 import { BaseError } from 'viem';
-import { useAccount, useConnect, useDisconnect } from 'wagmi';
+import { useAccount, useConnect, useDisconnect, useEnsName } from 'wagmi';
+
+function shortAdrress(address: string | undefined) {
+  return address ? `0x${address.substring(3, 7)}...${address.substring(address.length - 4)}` : '';
+}
 
 export function Connect() {
-  const { connector, isConnected } = useAccount();
-  const { connect, connectors, error, isLoading, pendingConnector } =
-    useConnect();
+  const { address, connector, isConnected } = useAccount();
+  const { data: ensName } = useEnsName({ address });
+  const { connect, connectors, error, isLoading, pendingConnector } = useConnect();
   const { disconnect } = useDisconnect();
+  const metamask = connectors[0];
 
   return (
     <div>
-      <div>
-        {isConnected && (
-          <button onClick={() => disconnect()}>
-            Disconnect from {connector?.name}
-          </button>
-        )}
+      {isConnected && (
+        <button onClick={() => disconnect()}>
+          {ensName ?? shortAdrress(address)}
+        </button>
+      )}
 
-        {connectors
-          .filter((x) => x.ready && x.id !== connector?.id)
-          .map((x) => (
-            <button key={x.id} onClick={() => connect({ connector: x })}>
-              {x.name}
-              {isLoading && x.id === pendingConnector?.id && ' (connecting)'}
-            </button>
-          ))}
-      </div>
+      {metamask.ready && connector?.id !== metamask.id && <button key={metamask.id} onClick={() => connect({ connector: metamask })}>
+        Connect
+        {isLoading && metamask.id === pendingConnector?.id && ' (connecting)'}
+      </button>}
 
       {error && <div>{(error as BaseError).shortMessage}</div>}
     </div>

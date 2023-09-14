@@ -6,22 +6,19 @@ import { useState } from 'react';
 import { Connect } from './Connect';
 
 import nerwo from '@/public/nerwo.svg';
-import etherscan from '@/public/etherscan-logo-circle-light.svg';
-import github from '@/public/github-mark-white.svg';
 
 export default function Navbar() {
     const [navbar, setNavbar] = useState(false);
     return (
         <nav>
-            <div>
+            <div className='flex items-center justify-between p-4'>
                 <Link href="https://nerwo.xyz/">
                     <Image
                         src={nerwo}
                         alt="Nerwo"
-                        width={32}
+                        width={132}
                         height={32} />
                 </Link>
-                <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Nerwo Test Token Faucet</span>
                 <div className="md:hidden">
                     <button className="hamburger" onClick={() => setNavbar(!navbar)}>
                         {navbar ? (
@@ -56,33 +53,17 @@ export default function Navbar() {
                 <div className={`menu ${navbar ? 'block' : 'hidden'}`}>
                     <ul>
                         <li>
-                            <Connect />
-                        </li>
-                        <li>
                             <Link href={`https://sepolia.etherscan.io/address/${process.env.NEXT_PUBLIC_NERWO_TOKEN_ADDRESS}`}>
-                                <div className="flex gap-2">
-                                    <Image
-                                        className="flex flex-col h-full"
-                                        src={etherscan}
-                                        alt="Token contract on Etherscan"
-                                        width={32}
-                                        height={32} />
-                                    <div className="md:hidden flex flex-col h-full">Etherscan</div>
-                                </div>
+                                <div className='align-middle'>View Contract</div>
                             </Link>
                         </li>
                         <li>
                             <Link href="https://github.com/sherpya/nerwo-token-faucet">
-                                <div className="flex gap-2">
-                                    <Image
-                                        className="flex flex-col h-full"
-                                        src={github}
-                                        alt="Source code on GitHub"
-                                        width={32}
-                                        height={28} />
-                                    <div className="md:hidden flex flex-col h-full">GitHub</div>
-                                </div>
+                                <div>GitHub Source</div>
                             </Link>
+                        </li>
+                        <li>
+                            <Connect />
                         </li>
                     </ul>
                 </div>

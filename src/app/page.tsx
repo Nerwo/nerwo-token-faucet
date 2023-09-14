@@ -1,17 +1,17 @@
-import { Account } from '../components/Account';
+import { Unbounded } from 'next/font/google';
 import { AccountBalance } from '../components/Balance';
 import { Connected } from '../components/Connected';
 import { MintToken } from '../components/MintToken';
 import { NetworkSwitcher } from '../components/NetworkSwitcher';
 
+const unbounded = Unbounded({ subsets: ['latin'] });
+
 export default function Page() {
   return (
-    <main>
+    <main className={unbounded.className}>
       <Connected>
         <div className="flex flex-col gap-1 p-2">
-          <h2>Account</h2>
-          <Account />
-          <hr />
+           <hr />
           <h2>Network</h2>
           <NetworkSwitcher />
           <h2>Balance</h2>
