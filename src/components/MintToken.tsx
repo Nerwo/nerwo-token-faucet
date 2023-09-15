@@ -39,19 +39,24 @@ export function MintToken() {
   }, [isSuccess, nextStep]);
 
   return (
-    <>
-      <h3>Mint a Nerwo Test Token</h3>
-      <form onSubmit={(e) => {
-        e.preventDefault();
-        write?.();
-      }}>
-        <input
-          placeholder="Amount"
-          onChange={(e) => setTokenId(e.target.value)} />
-        <button className='button-submit' disabled={!write} type="submit">
-          Mint
-        </button>
-      </form>
+    <div className="wizard-content">
+      <h1 className="text-center">Mint Nerwo Test Tokens</h1>
+      <div>Click the button below to mint as many as you want Nerwo faucet tokens (for free).
+        These tokens are used to do testing inside the Nerwo platform.</div>
+
+      <div className="text-center">
+        <form onSubmit={(e) => {
+          e.preventDefault();
+          write?.();
+        }}>
+          <input
+            placeholder="Amount"
+            onChange={(e) => setTokenId(e.target.value)} />
+          <button className='button-submit' disabled={!write || isLoading || isPending} type="submit">
+            Mint
+          </button>
+        </form>
+      </div>
 
       {isLoading && <div>Check wallet...</div>}
       {isPending && <div>Transaction pending...</div>}
@@ -64,6 +69,6 @@ export function MintToken() {
         </>
       )}
       {isError && <div>{(error as BaseError)?.shortMessage}</div>}
-    </>
+    </div>
   );
 }

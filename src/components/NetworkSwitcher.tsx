@@ -6,7 +6,7 @@ import { sepolia, useNetwork, useSwitchNetwork } from 'wagmi';
 
 export function NetworkSwitcher() {
   const { chain } = useNetwork();
-  const { chains, error, isLoading, pendingChainId, switchNetwork } = useSwitchNetwork();
+  const { error, isLoading, pendingChainId, switchNetwork } = useSwitchNetwork();
   const { nextStep } = useWizard();
 
   useEffect(() => {
@@ -16,21 +16,17 @@ export function NetworkSwitcher() {
   }, [chain, nextStep]);
 
   return (
-    <div>
+    <div className="wizard-content">
+      <h1 className="text-center">Switch to Sepolia Network</h1>
+      <div>Switch to Sepolia network clicking the button below.</div>
       {switchNetwork && (
-        <div>
-          Switch to:{' '}
-          {chains.map((x) =>
-            x.id === chain?.id ? null : (
-              <button key={x.id} onClick={() => switchNetwork(x.id)}>
-                {x.name}
-                {isLoading && x.id === pendingChainId && ' (switching)'}
-              </button>
-            ),
-          )}
+        <div className="text-center">
+          <button key={sepolia.id} onClick={() => switchNetwork(sepolia.id)}>
+            Switch
+            {isLoading && sepolia.id === pendingChainId && ' (switching)'}
+          </button>
         </div>
       )}
-
       <div>{error?.message}</div>
     </div>
   );
