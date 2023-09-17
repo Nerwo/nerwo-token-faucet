@@ -13,8 +13,8 @@
 }
 */
 
-
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -51,19 +51,6 @@ input {
 /* https://github.com/tailwindlabs/tailwindcss/discussions/5969 */
 .button-submit {
   @apply bg-malachite-500 hover:bg-malachite-600;
-}
-
-.wizard-header {
-  @apply bg-white;
-}
-
-.wizard-content {
-  @apply rounded-3xl bg-gin p-8;
-  width: 600px;
-
-  div {
-    @apply p-3;
-  }
 }
 
 nav {
@@ -103,3 +90,45 @@ nav > div {
   }
 }
 */
+
+.wizard-content {
+  @apply rounded-3xl bg-gin p-8;
+  width: 600px;
+
+  div {
+    @apply p-3;
+  }
+}
+
+.wizard-header {
+  @apply bg-white py-4;
+
+  ul {
+    @apply text-justify relative overflow-hidden m-0 p-0 inline-flex justify-around w-full;
+  }
+
+  li {
+    @apply relative w-1/5 text-center inline;
+    padding-bottom: 30px;
+  }
+
+  .marker-number {
+    @apply text-white text-center text-xl align-middle leading-7 inline-block pt-2 rounded-full bg-malachite-500;
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .marker-line {
+    @apply bg-malachite-500 absolute w-full;
+    height: 2px;
+    top: 30%;
+  }
+
+  span.marker-text {
+    @apply absolute;
+    line-height: -15px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
