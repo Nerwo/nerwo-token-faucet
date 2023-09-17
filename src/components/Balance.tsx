@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { useWizard } from 'react-use-wizard';
 import { sepolia, useAccount, useBalance, useNetwork } from 'wagmi';
 
-const MIN_ETH = BigInt(5 * 10 ** 17);
+const MIN_ETH = BigInt(2 * 10 ** 17);
 
 export function Balance() {
     const { chain } = useNetwork();
