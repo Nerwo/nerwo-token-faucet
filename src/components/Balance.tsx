@@ -1,11 +1,13 @@
+'use client';
+
 import Link from 'next/link';
 import { useEffect } from 'react';
 import { useWizard } from 'react-use-wizard';
 import { sepolia, useAccount, useBalance, useNetwork } from 'wagmi';
 
-const MIN_ETH = BigInt(500000000000000000);
+const MIN_ETH = BigInt(5 * 10 ** 17);
 
-export default function Balance() {
+export function Balance() {
     const { chain } = useNetwork();
     const account = useAccount();
     const { data } = useBalance({ chainId: sepolia.id, address: account.address, watch: true });

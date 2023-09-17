@@ -1,6 +1,5 @@
 import { Unbounded } from 'next/font/google';
-import { Connected } from '../components/Connected';
-import MintWizard from '../components/MintWizard';
+import { Connected, MintWizard } from '@/components';
 
 const unbounded = Unbounded({ subsets: ['latin'] });
 

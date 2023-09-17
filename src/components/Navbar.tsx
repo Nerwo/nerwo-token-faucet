@@ -3,11 +3,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
-import { Connect } from './Connect';
+import { Connect } from '@/components';
 
 import nerwo from '@/public/nerwo.svg';
 
-export default function Navbar() {
+export function Navbar() {
     const [navbar, setNavbar] = useState(false);
     return (
         <nav>

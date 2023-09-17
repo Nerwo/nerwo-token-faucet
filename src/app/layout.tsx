@@ -1,8 +1,7 @@
 import './globals.css';
 import { Metadata } from 'next';
 import { Providers } from './providers';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+import { Navbar, Footer } from '@/components';
 
 export const metadata: Metadata = {
   title: 'Nerwo Token Faucet',

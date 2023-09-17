@@ -1,4 +1,4 @@
-export default function Congrats() {
+export function Congrats() {
     return (
         <div className="wizard-content">
             <h1 className="text-center">Congrats!</h1>

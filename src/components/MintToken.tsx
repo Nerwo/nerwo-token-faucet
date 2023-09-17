@@ -3,12 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useWizard } from 'react-use-wizard';
 import { BaseError, parseUnits } from 'viem';
-import {
-  useContractWrite,
-  usePrepareContractWrite,
-  useWaitForTransaction,
-} from 'wagmi';
-
+import { useContractWrite, usePrepareContractWrite, useWaitForTransaction } from 'wagmi';
 
 import { nerwoTokenConfig } from './contracts';
 import { useDebounce } from '../hooks/useDebounce';
