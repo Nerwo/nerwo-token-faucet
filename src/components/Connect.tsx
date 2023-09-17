@@ -3,7 +3,7 @@
 import { BaseError } from 'viem';
 import { useAccount, useConnect, useDisconnect, useEnsName } from 'wagmi';
 
-function shortAdrress(address: string | undefined) {
+function shortAddress(address: string | undefined) {
   return address ? `0x${address.substring(3, 7)}...${address.substring(address.length - 4)}` : '';
 }
 
@@ -18,7 +18,7 @@ export function Connect() {
     <div>
       {isConnected && (
         <button onClick={() => disconnect()}>
-          {ensName ?? shortAdrress(address)}
+          {ensName ?? shortAddress(address)}
         </button>
       )}
 
