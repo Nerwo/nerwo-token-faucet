@@ -33,9 +33,8 @@ export function MintToken() {
   return (
     <div className="wizard-content">
       <h1 className="text-center">Mint Nerwo Test Tokens</h1>
-      <div>Click the button below to mint as many as you want Nerwo faucet tokens (for free).
+      <div>Click the button below to mint as many as you want Nerwo test USDT like tokens (for free).
         These tokens are used to do testing inside the Nerwo platform.</div>
-
       <div className="text-center">
         <form onSubmit={(e) => {
           e.preventDefault();
