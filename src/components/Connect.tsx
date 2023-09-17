@@ -1,6 +1,7 @@
 'use client';
 
 import { BaseError } from 'viem';
+import Link from 'next/link';
 import { useAccount, useConnect, useDisconnect, useEnsName } from 'wagmi';
 
 function shortAddress(address: string | undefined) {
@@ -26,6 +27,10 @@ export function Connect() {
         Connect
         {isLoading && metamask.id === pendingConnector?.id && ' (connecting)'}
       </button>}
+
+      {!metamask.ready && <Link href="https://metamask.io/" target="_blank">
+        <button>Install Metamask</button>
+      </Link>}
 
       {error && <div>{(error as BaseError).shortMessage}</div>}
     </div>
