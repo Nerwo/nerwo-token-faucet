@@ -7,10 +7,11 @@ import { useContractWrite, usePrepareContractWrite, useWaitForTransaction } from
 
 import { nerwoTokenConfig } from './contracts';
 import { useDebounce } from '../hooks/useDebounce';
-import { stringify } from '../utils/stringify';
+
+const DEFAULT_AMOUNT = '1000';
 
 export function MintToken() {
-  const [amount, setTokenId] = useState('');
+  const [amount, setTokenId] = useState(DEFAULT_AMOUNT);
   const debouncedAmount = useDebounce(amount);
   const { nextStep } = useWizard();
 
@@ -21,11 +22,7 @@ export function MintToken() {
     args: [parseUnits(debouncedAmount, process.env.NEXT_PUBLIC_NERWO_TOKEN_DECIMALS)],
   });
   const { write, data, error, isLoading, isError } = useContractWrite(config);
-  const {
-    data: receipt,
-    isLoading: isPending,
-    isSuccess,
-  } = useWaitForTransaction({ hash: data?.hash });
+  const { isLoading: isPending, isSuccess } = useWaitForTransaction({ hash: data?.hash });
 
   useEffect(() => {
     if (isSuccess) {
@@ -46,6 +43,7 @@ export function MintToken() {
         }}>
           <input
             placeholder="Amount"
+            defaultValue={DEFAULT_AMOUNT}
             onChange={(e) => setTokenId(e.target.value)} />
           <button className='button-submit' disabled={!write || isLoading || isPending} type="submit">
             Mint
@@ -55,14 +53,6 @@ export function MintToken() {
 
       {isLoading && <div>Check wallet...</div>}
       {isPending && <div>Transaction pending...</div>}
-      {isSuccess && (
-        <>
-          <div>Transaction Hash: {data?.hash}</div>
-          <div>
-            Transaction Receipt: <pre>{stringify(receipt, null, 2)}</pre>
-          </div>
-        </>
-      )}
       {isError && <div>{(error as BaseError)?.shortMessage}</div>}
     </div>
   );

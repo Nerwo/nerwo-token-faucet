@@ -15,7 +15,7 @@ export function Balance() {
     const { nextStep } = useWizard();
 
     useEffect(() => {
-        if ((chain?.id === sepolia.id) && (data && (data.value > MIN_ETH))) {
+        if ((chain?.id === sepolia.id) && (data && (data.value >= MIN_ETH))) {
             nextStep();
         }
     }, [chain, data, nextStep]);
