@@ -7,4 +7,5 @@ export { MintToken } from './MintToken';
 export { MintWizard } from './MintWizard';
 export { Navbar } from './Navbar';
 export { NetworkSwitcher } from './NetworkSwitcher';
+export { Splash } from './Splash';
 export { WizardHeader } from './WizardHeader';
