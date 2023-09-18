@@ -18,7 +18,7 @@ export function NetworkSwitcher() {
   return (
     <div className="wizard-content">
       <h1 className="text-center">Switch to Sepolia Network</h1>
-      <div>Switch to Sepolia network clicking the button below.</div>
+      <div className="font-medium">Switch to Sepolia network clicking the button below.</div>
       {switchNetwork && (
         <div className="text-center">
           <button key={sepolia.id} onClick={() => switchNetwork(sepolia.id)}>

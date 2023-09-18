@@ -13,6 +13,10 @@
 }
 */
 
+html {
+  @apply font-inter;
+}
+
 html,
 body {
   height: 100%;
@@ -36,21 +40,21 @@ input {
 }
 
 h1 {
-  @apply text-4xl font-bold mx-auto;
+  @apply text-4xl font-extrabold font-unbounded mx-auto;
   width: 70%;
 }
 
 button {
-  @apply bg-malachite-500 hover:bg-malachite-600 text-white font-bold py-2 px-4 rounded-full;
+  @apply font-semibold bg-malachite-500 hover:bg-malachite-600 text-white py-2 px-4 rounded-full;
 }
 
 input {
-  @apply shadow appearance-none border rounded-full py-2 px-3 text-gray-700 leading-tight;
+  @apply font-medium shadow appearance-none border rounded-full py-2 px-3 text-gray-700 leading-tight;
 }
 
 /* https://github.com/tailwindlabs/tailwindcss/discussions/5969 */
 .button-submit {
-  @apply bg-malachite-500 hover:bg-malachite-600;
+  @apply font-semibold bg-malachite-500 hover:bg-malachite-600;
 }
 
 nav {
@@ -107,7 +111,7 @@ footer {
   }
 
   span.marker-text {
-    @apply absolute;
+    @apply absolute font-medium;
     line-height: -15px;
     left: 0;
     right: 0;

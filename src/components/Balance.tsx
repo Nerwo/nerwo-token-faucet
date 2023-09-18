@@ -23,7 +23,7 @@ export function Balance() {
     return (
         <div className="wizard-content">
             <h1 className="text-center">You need Sepolia ETH for gas</h1>
-            <div>Click the button below to go the Sepolia faucet and earn some tokens.
+            <div className="font-medium">Click the button below to go the Sepolia faucet and earn some tokens.
                 These tokens are used to do any kind of testing within Nerwo.</div>
             <div className="font-bold">Once you have it, come back here for the final step.</div>
             <div className="text-center">

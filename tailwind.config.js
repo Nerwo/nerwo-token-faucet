@@ -9,6 +9,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        inter: ['var(--font-inter)'],
+        unbounded: ['var(--font-unbounded)'],
+      },
       colors: {
         primary: '#014c31',
         secondary: '#00c920',
