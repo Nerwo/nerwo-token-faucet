@@ -40,8 +40,8 @@ input {
 }
 
 h1 {
-  @apply text-4xl font-extrabold font-unbounded mx-auto;
-  width: 70%;
+  @apply text-4xl font-extrabold font-unbounded mx-auto py-4;
+  width: w-3/4;
 }
 
 button {
@@ -78,8 +78,8 @@ footer {
 }
 
 .wizard-content {
-  @apply rounded-3xl bg-gin p-8;
-  width: 600px;
+  @apply mx-auto rounded-3xl bg-gin px-6 py-20;
+  width: 800px;
 
   div {
     @apply p-3;
@@ -87,10 +87,10 @@ footer {
 }
 
 .wizard-header {
-  @apply bg-white py-4;
+  @apply bg-white p-4;
 
   ul {
-    @apply text-justify relative overflow-hidden m-0 p-0 inline-flex justify-around w-full;
+    @apply overflow-hidden inline-flex justify-evenly w-full;
   }
 
   li {

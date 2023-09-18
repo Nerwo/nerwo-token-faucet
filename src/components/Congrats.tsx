@@ -31,8 +31,8 @@ export function Congrats() {
     return (
         <div className="wizard-content">
             <h1 className="text-center">Congrats!</h1>
-            <div className="font-medium">Thank you anon, you have do it all the process.</div>
-            <div className="font-bold">Now you are ready to test Nerwo.</div>
+            <div className="text-center font-medium">Thank you anon, you have do it all the process.</div>
+            <div className="text-center font-bold">Now you are ready to test Nerwo.</div>
             <div className="text-center">
                 <button onClick={(e) => watchAsset()}>Add Token on Metamask</button>
             </div>
