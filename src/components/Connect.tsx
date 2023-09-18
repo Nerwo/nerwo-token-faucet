@@ -3,6 +3,7 @@
 import { BaseError } from 'viem';
 import Link from 'next/link';
 import { useAccount, useConnect, useDisconnect, useEnsName } from 'wagmi';
+import { metamask } from '../wagmi';
 
 function shortAddress(address: string | undefined) {
   return address ? `0x${address.substring(3, 7)}...${address.substring(address.length - 4)}` : '';
@@ -11,9 +12,8 @@ function shortAddress(address: string | undefined) {
 export function Connect() {
   const { address, connector, isConnected } = useAccount();
   const { data: ensName } = useEnsName({ address });
-  const { connect, connectors, error, isLoading, pendingConnector } = useConnect();
+  const { connect, error, isLoading, pendingConnector } = useConnect({ connector: metamask});
   const { disconnect } = useDisconnect();
-  const metamask = connectors[0];
 
   return (
     <div>
