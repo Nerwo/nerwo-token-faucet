@@ -44,7 +44,7 @@ export function MintToken() {
             placeholder="Amount"
             defaultValue={DEFAULT_AMOUNT}
             onChange={(e) => setTokenId(e.target.value)} />
-          <button className='button-submit' disabled={!write || isLoading || isPending} type="submit">
+          <button className="button-submit" disabled={!write || isLoading || isPending} type="submit">
             Mint
           </button>
         </form>
