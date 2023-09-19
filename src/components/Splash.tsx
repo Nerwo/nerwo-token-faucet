@@ -7,10 +7,10 @@ export function Splash() {
     return (
         <div className="wizard-content flex flex-row items-center px-20">
             <div className="h-full px-20">
-                <h1 className="text-center">Welcome to Nerwo Test Token Faucet!</h1>
-                <div className="text-center font-medium">This is the Nerwo’s test-token faucet,
+                <h1>Welcome to Nerwo Test Token Faucet!</h1>
+                <div className="font-medium">This is the Nerwo’s test-token faucet,
                     where you can get tokens for free to start try Nerwo.</div>
-                <div className="text-center font-medium">The test-token (USDT.n),
+                <div className="font-medium">The test-token (USDT.n),
                     is an ERC-20 of OpenZeppelin with only mint and burn functions added.</div>
                 <Connect />
             </div>
