@@ -17,18 +17,12 @@ html {
   @apply font-inter;
 }
 
-html,
-body {
-  height: 100%;
-}
-
 body {
   @apply bg-white text-primary flex flex-col justify-between;
 }
 
 main {
-  @apply flex gap-2 bg-white;
-  height: 80%;
+  @apply bg-white py-16 px-20;
 }
 
 a {
@@ -72,14 +66,15 @@ nav {
 footer {
   @apply bg-primary text-white;
 
-  div {
-    @apply mx-auto w-full;
+  .social {
+    a {
+      @apply text-white hover:text-hover dark:hover:text-hover;
+    }
   }
 }
 
 .wizard-content {
-  @apply mx-auto rounded-3xl bg-gin px-6 py-20;
-  width: 800px;
+  @apply mx-auto rounded-3xl bg-gin p-4;
 
   div {
     @apply p-3;
@@ -87,7 +82,7 @@ footer {
 }
 
 .wizard-header {
-  @apply bg-white p-4;
+  @apply p-4;
 
   ul {
     @apply overflow-hidden inline-flex justify-evenly w-full;
