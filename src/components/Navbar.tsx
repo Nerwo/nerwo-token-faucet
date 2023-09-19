@@ -18,7 +18,7 @@ export function Navbar() {
                 <div>
                     <ul>
                         <li>
-                            <Link href={`https://sepolia.etherscan.io/address/${process.env.NEXT_PUBLIC_NERWO_TOKEN_ADDRESS}`}>
+                            <Link href={`https://sepolia.etherscan.io/address/${process.env.NEXT_PUBLIC_NERWO_TOKEN_ADDRESS}#code`}>
                                 <div className='align-middle'>View Contract</div>
                             </Link>
                         </li>
