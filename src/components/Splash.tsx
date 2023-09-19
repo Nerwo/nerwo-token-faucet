@@ -5,8 +5,8 @@ import { Connect } from '@/components';
 
 export function Splash() {
     return (
-        <div className="wizard-content flex flex-row items-center px-20">
-            <div className="h-full px-20">
+        <div className="wizard-content flex flex-row items-center">
+            <div className="h-full ">
                 <h1>Welcome to Nerwo Test Token Faucet!</h1>
                 <div className="font-medium">This is the Nerwo’s test-token faucet,
                     where you can get tokens for free to start try Nerwo.</div>

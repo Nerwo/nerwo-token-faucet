@@ -5,7 +5,7 @@ import nerwoFooter from '@/public/nerwoFooter.svg';
 
 export function Footer() {
     return (
-        <footer className="px-20">
+        <footer className="px-[10%]">
             <div className="flex flex-col py-8">
                 <div className="flex items-center justify-between px-4 w-full">
                     <div>

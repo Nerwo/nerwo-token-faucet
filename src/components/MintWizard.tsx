@@ -6,7 +6,7 @@ import { WizardHeader, NetworkSwitcher, Balance, MintToken, Congrats } from '@/c
 export function MintWizard() {
     return (
         <div className="flex items-center justify-between p-4 w-full">
-            <div className="mx-auto w-full px-48">
+            <div className="mx-auto w-full px-[10%]">
                 <Wizard header={<WizardHeader />}>
                     <NetworkSwitcher />
                     <Balance />

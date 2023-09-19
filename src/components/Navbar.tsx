@@ -6,7 +6,7 @@ import nerwo from '@/public/nerwo.svg';
 
 export function Navbar() {
     return (
-        <nav className="px-20">
+        <nav className="px-[10%]">
             <div className="flex items-center justify-between p-4 py-8 w-full">
                 <Link href="https://nerwo.xyz/">
                     <Image
