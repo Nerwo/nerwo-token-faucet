@@ -1,11 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@layer utilities {
-  .debug {
-    border: 1px solid red;
-  }
-}
 
 /*
 * {
@@ -35,7 +30,7 @@ input {
 
 h1 {
   @apply text-4xl font-extrabold font-unbounded mx-auto py-4;
-  width: w-3/4;
+  width: w-3 / 4;
 }
 
 button {
