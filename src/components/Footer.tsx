@@ -42,7 +42,7 @@ export function Footer() {
                     </div>
                 </div>
                 <div className="px-4 w-full mx-auto"><hr className="h-px my-8 bg-white border-0" /></div>
-                <div className="text-lg font-medium px-4 w-full">&copy; 2023 Nerwo</div>
+                <div className="text-lg font-medium px-4 w-full">&copy; 2024 Nerwo</div>
             </div>
         </footer>
     );
